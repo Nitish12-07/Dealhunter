@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DealHunter Clone</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+  <header class="header">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">DealHunter</h1>
+      <input id="searchBar" type="text" placeholder="Search for products, deals..." class="search-input">
+    </div>
+  </header>
+
+  <section class="hero-section">
+    <h2 class="hero-title">Hunt the Best Deals Online!</h2>
+    <p class="hero-subtitle">Find exclusive discounts, coupons and offers from Amazon, Flipkart, Ajio, Nykaa, Meesho and more!</p>
+    <button class="hero-button">Explore Deals</button>
+  </section>
+
+  <main class="container mx-auto py-8">
+    <!-- Categories -->
+    <div class="categories-grid">
+      <button onclick="filterCategory('Electronics')" class="category-button">Electronics</button>
+      <button onclick="filterCategory('Fashion')" class="category-button">Fashion</button>
+      <button onclick="filterCategory('Home')" class="category-button">Home</button>
+      <button onclick="filterCategory('Grocery')" class="category-button">Grocery</button>
+      <button onclick="filterCategory('Beauty')" class="category-button">Beauty</button>
+    </div>
+
+    <!-- Sorting Options -->
+    <div class="sorting-container">
+      <div>
+        <label for="sortSelect" class="sort-label">Sort by:</label>
+        <select id="sortSelect" onchange="renderDeals()" class="sort-select">
+          <option value="default">Default</option>
+          <option value="lowToHigh">Price: Low to High</option>
+          <option value="highToLow">Price: High to Low</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Flash Deals -->
+    <section class="deals-section">
+      <h3 class="section-title">⚡ Flash Deals</h3>
+      <div class="deals-grid" id="flashDeals"></div>
+    </section>
+
+    <!-- Best Deals -->
+    <section class="deals-section">
+      <h3 class="section-title">🔥 Today's Best Deals</h3>
+      <div class="deals-grid" id="bestDeals"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 DealHunter. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
